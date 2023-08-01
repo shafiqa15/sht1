@@ -1,6 +1,7 @@
 package mainclasses;
 
 import java.util.Scanner;
+
 import java.util.logging.Logger;
 
 public class Apartment {	

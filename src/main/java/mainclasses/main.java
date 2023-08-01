@@ -242,7 +242,7 @@ switch(num) {
 		    if(str.equals("a")) 
 		    {
 		    
-		         ap.setAccept(true);
+		        // ap.setAccept(true);
 		            logger.info("Accepted !!,now enter as an admin to book , please enter the word:  "+ "tenant"+"\n");
 				    str = s.nextLine();
 		          if (str.equals("tenant")) {
