@@ -203,14 +203,7 @@ public class Apartment {
 	public void setDate(String date) {
 		this.date = date;
 	}
-    public  boolean getAccept() {
-		return accept;
-	}
-
-	public void setAccept(boolean accept){
-		this.accept = accept;
-	}
-    
+   
 
 
 	public static void addApartment() {
