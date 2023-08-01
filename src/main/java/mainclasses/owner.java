@@ -95,6 +95,12 @@ public class owner {
 		return name;
 	}
 
+	public String getEmail() {
+		return email;
+	}
+
+
+
 	public void setName(String name) {
 		this.name = name;
 	}
@@ -118,6 +124,10 @@ public class owner {
 	public static void signUp(String email2, String password2) {
 		// TODO Auto-generated method stub
 		
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
    	

@@ -1,62 +1,61 @@
 package mainclasses;
-import java.util.ArrayList;
-import java.util.List;
+
 import java.util.Scanner;
 import java.util.logging.Logger;
 
 public class Apartment {	
-	private static final Logger logger = Logger.getLogger(Apartment.class.getName());
+	   private static final Logger logger = Logger.getLogger(Apartment.class.getName());
 
 
-	   public String id;
-	   public String picture;
-	   public String rent;	  
-	   public String location; 	   
-	   public String water;
-	   public String electric;
-	   public String balcony;
-	   public String internet;
-	   public String bathrooms;
-	   public String bedrooms;
-	   public String floor; 
-	   public String numberOfApartmentsInFloor;       
-	   public String buildingId;
-	   public String name;
-     	 public  boolean accept;
-     	public String StudentMajor;
-     	public String nameـtenant;
-     	public String age_tenant;
+	   private String id;
+       private String picture;
+       private String rent;	  
+       private String location; 	   
+       private String water;
+       private String electric;
+       private String balcony;
+       private String internet;
+       private String bathrooms;
+	   private String bedrooms;
+	   private String floor; 
+	   private String numberOfApartmentsInFloor;       
+	   private String buildingId;
+	   private String name;
+	   private  boolean accept;
+	   private String studentMajor;
+	   private String nameTenant;
+       private String ageTenant;
 	   String date;
 
 
 	   
 	   
 	   public String getage_tenant() {
-			return age_tenant;
+			return ageTenant;
 		}
 
 
-		public void setage_tenant(String age_tenant) {
-			this.age_tenant = age_tenant;
+		public void setage_tenant(String ageTenant) {
+			this.ageTenant = ageTenant;
 		}
 	   
 	   public String getStudentMajor() {
-			return StudentMajor;
+			return studentMajor;
 		}
 
 
-		public void setStudentMajor(String StudentMajor) {
-			this.StudentMajor = StudentMajor;
+		public void setStudentMajor(String studentMajor) {
+			this.studentMajor = studentMajor;
 		}
 	   
 	   
 	   public String getnameـtenant() {
-			return nameـtenant;
+			return nameTenant;
 		}
 
 
-		public void setnameـtenant(String nameـtenant) {
-			this.nameـtenant = nameـtenant;
+		public void setnameـtenant(String nameTenant) {
+			this.nameTenant = nameTenant ;
 		}
 	public String getId() {
 		return id;
@@ -313,7 +312,7 @@ public class Apartment {
        }
        ap.setBalcony(balcony) ;
      
-       //inforamation for building
+
        logger.info("building id:");
        String buildingId =s.nextLine();
        valid = owner.yesNoValidator(buildingId);
@@ -333,12 +332,10 @@ public class Apartment {
        main.db_Apartment.add(ap);   
        
 
-       // check if the building in the array list
        buildingExists = false;
        for (Apartment a : main.db_Apartment  ) {
            if (a.getBuildingId().equals(buildingId)) {
         	   buildingExists = true;
-        	     //  viewDashboard();
                break;
            }
        }  
@@ -357,11 +354,12 @@ public class Apartment {
 
 	public static void viewDashboard() {
 		Scanner s = new Scanner(System.in);
+		int count=0;
 		
-       //dash board for owner -start
        String currentEnterdBuildingfloors = " ";            
-       logger.info("------------------------------------ MY Dash Board ------------------------------------\n");
+       logger.info("------------------------------------ Owner Final Dash Board ------------------------------------\n");
        //display buildings
+       
        logger.info("Buildings:\n");
        for(Apartment b  : main.db_Apartment ) {
     	   logger.info("building "+ b.getBuildingId());              
@@ -380,37 +378,9 @@ public class Apartment {
     	        logger.info("invalid building id !");
     	  }
        }            
-       //display floors
-    /* 
-       int floorsInt = Integer.parseInt(currentEnterdBuildingfloors);            
-       logger.info(floorsInt +" floors\n");            
-       //get specific floor and check it 
-       logger.info("Enter the floor number .. ");
-       String currentEnterdFloor = s.nextLine();
-       int currentEnterdFloorInt = Integer.parseInt(currentEnterdFloor);            
-       while (currentEnterdFloorInt >floorsInt ){
-           logger.info("invalid floor !");
-           currentEnterdFloor = s.nextLine();
-           currentEnterdFloorInt = Integer.parseInt(currentEnterdFloor); 
-         
-       }
-    
-      //convert department arrayList to array
-      int c1 = main.db_Apartment.size();
-      Apartment[]  apartmentArray = main.db_Apartment.toArray(new Apartment[main.db_Apartment.size()]);
-      for(int i = 1 ; i<=c1 ; i++ ) {
-    	  if( currentEnterdBuildingId.equals(apartmentArray[i].getBuildingId()) && currentEnterdFloor.equals(apartmentArray[i].getFloor())) {
-               logger.info(apartmentArray[i].getId()+"\n");     
-    	  }     
-    	  else if (i==c && currentEnterdBuildingfloors.equals(null)) {
-    	      logger.info("invalid building id !");
-    	  }
-      } */
-     
- 
+  
 
-     
-      //dash board for owner -end
+
              
 		
 	}
@@ -433,7 +403,7 @@ public class Apartment {
 
 		Scanner s = new Scanner(System.in);
 		
-        String currentId= null;
+        String currentId;
   	    logger.info("Enter Appartment id :");
   	    currentId = s.nextLine();
         int count = main.db_Apartment.size();

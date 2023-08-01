@@ -164,8 +164,134 @@ public class admin {
 	+ "| --------------------------------------------------------------------------------------------------- |"+"\n");
 			 
 			 
+			 logger.info(" \n enter modify as owner:");
+			//break;
+	        
+			String p;
+			String location;
+			String rent ;
+			String  water  ;
+			String  internet ;
+			String electricety ;
+			String bathrooms ;
+			String bedrooms ;
+			String balcony ;
+			boolean accept;
+			
+			boolean valid ;
+	        boolean flag = true ; 
+
+			
+	        String currentId;
+	  	    logger.info("Enter Appartment id :");
+	  	    currentId = s.nextLine();
+	        int count = main.db_Apartment.size();
+	        
+	        	
+	        	if(ap.getBuildingId().equals(currentId) ) {
+	                flag = true ; 
+	        		logger.info("1.rent"+"\n"+"2.location"+"\n"+"3.picture"+"\n"+"4.internet"+"\n"+"5.water"+"\n"+"6.electric"+"\n"+"7.balcony"+"\n"
+	        	                +"8.bathrooms"+"\n"+"9.bedrooms"+"\n");  
+	                int modify = s.nextInt();           		
+	        		
+	                if(modify ==1){
+	        			rent = s.nextLine();
+	        			rent = s.nextLine();
+	        			valid = owner.digitsValidator(rent);
+	        			while(!valid) {
+	        				logger.info("inalid!");
+	        				valid  = owner.digitsValidator(rent);
+	            			rent = s.nextLine();
+	        			}
+	        			ap.setRent(rent);
+	        			logger.info(ap.getRent());
+	        			
+	        			
+	        		}
+	        		else if (modify ==2) {
+	        			location = s.nextLine();
+	        			ap.setLocation(location);              	
+	        	    }
+	        		else if(modify ==3) {
+	        			p = s.nextLine();
+	        			valid = owner.urlValidator(p);
+	        			while(!valid) {
+	        				logger.info("inalid!");
+	            			valid = owner.urlValidator(p);
+	            			p = s.nextLine();
+	        			}
+	        			ap.setPicture(p);              	                       
+	        		}
+	        		else if(modify ==4) {
+	        		    internet = s.nextLine() ;
+	        			valid = owner.yesNoValidator(internet);
+	        			while(!valid) {
+	        				logger.info("inalid!");
+	            			valid = owner.yesNoValidator(internet);
+	            		    internet = s.nextLine() ;
+	        			}
+	        			ap.setInternet(internet);              	                       
+	        		}
+	        		else if(modify ==5) {
+	        		    water = s.nextLine() ;
+	        			valid = owner.yesNoValidator(water);
+	        			while(valid) {
+	        				logger.info("inalid!");
+	            			valid = owner.yesNoValidator(water);
+	            			water = s.nextLine() ;
+	        			}
+	        			ap.setWater(water);              	                       
+	        		}
+	        		else if(modify ==6) {
+	        			electricety = s.nextLine() ;
+	        			valid = owner.yesNoValidator(electricety);
+	        			while(!valid) {
+	        				logger.info("inalid!");
+	            			valid = owner.yesNoValidator(electricety);
+	            			electricety = s.nextLine() ;
+	        			}
+
+	        			ap.setElectric(electricety);              	                       
+	        		}
+	        		else if(modify ==7) {
+	        			balcony = s.nextLine() ;
+	        			valid = owner.yesNoValidator(balcony);
+	        			while(!valid) {
+	        				logger.info("inalid!");
+	            			valid = owner.yesNoValidator(balcony);
+	            			balcony = s.nextLine() ;
+	        			}
+	        			ap.setBalcony(balcony);              	                       
+	        		}
+	        		else if(modify ==8) {
+	        			bathrooms = s.nextLine() ;
+	        			valid = owner.digitsValidator(bathrooms);
+	        			while(!valid) {
+	        				logger.info("inalid!");
+	        				valid  = owner.digitsValidator(bathrooms);
+	        				bathrooms = s.nextLine();
+	        			}
+	        			ap.setBathrooms(bathrooms);              	                       
+	        		}
+	        		else if(modify ==9) {
+	        			bedrooms = s.nextLine() ;
+	        			valid = owner.digitsValidator(bedrooms);
+	        			while(!valid) {
+	        				logger.info("inalid!");
+	        				valid  = owner.digitsValidator(bedrooms);
+	        				bedrooms = s.nextLine();
+	        			}
+	        			ap.setBathrooms(bedrooms);              	                       
+	        		}
+	              
+	        	}
+	         
+		
+			
 			 
-			 //break;
+			 
+			 
+			 
 			}
 			
 			

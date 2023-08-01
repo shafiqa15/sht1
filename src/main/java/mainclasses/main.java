@@ -24,7 +24,7 @@ static String phone_number="0";
 
 public static user user1=new user();
 
-
+static owner own=new owner();
 static Database db=new Database();
 static Apartment ap = new Apartment();
 static String furniture;
@@ -76,23 +76,28 @@ public static boolean requestRejected = false ;
 			 logger.info("\n ");
 
 		     logger.info("Please enter your email as owner:"); 
-		     email=s.nextLine();
-		     email=s.nextLine();
+		    String emailowner;
+		    emailowner=s.nextLine();
+		    emailowner=s.nextLine();
 
+		    own.setEmail(emailowner);
 		     
-		     
-		     while(!(email.contains("@"))) {
+		     while(!(emailowner.contains("@"))) {
 			     logger.info("Please this is not an invalid email\n reenter ur email"); 
-		         email=s.nextLine();
+			     emailowner=s.nextLine();
+		         own.setEmail(emailowner);
 	         }	
 	         logger.info("\nPlease enter your password:"); 
 	         password=s.nextLine();	
-	         int res= owner.checkowner(email, password);   
+	         int res= owner.checkowner(emailowner, password);   
 	         logger.info("\nPlease enter your phone number:"); 
-	         phone_number=s.nextLine();
-	         owner own=new owner();
-	         own.setPhone(phone_number);
 	         
+	         phone_number=s.nextLine();
+	     
+	         own.setPhone(phone_number);
+	         String ownername;
+	         ownername=s.nextLine();
+	         own.setName(ownername);
 	         
 	         //sign up 
 	         if (res !=1) {//new user 	    	 
@@ -361,7 +366,7 @@ public static void ViewTenantMenuStudent(){
     	    s1=s.nextLine();
     	    if(s1.equals("5")) {
     	  TenantDashboard();}
-	    ///TALA 
+	
 	    
 	    }
 
@@ -380,7 +385,7 @@ public static void ViewTenantMenuStudent(){
 
   	 
     	 break;
-     }//end case 3
+     }
       case 4:
       {
     	 
@@ -439,17 +444,17 @@ static void ViewTenantMenuNotStudent(){
     {
    	 
    	 break;
-    }//end case 2
+    }
     case 3:
     {
    	 
    	 break;
-    }//end case 3
+    }
      case 4:
      {
    	 
    	 break;
-    }//end case 4
+    }
     
     default:
     {
@@ -464,19 +469,23 @@ static void TenantDashboard() {
 	
 
 	 logger.info("\nThis is is for "+	user1.name+" Only :D \n"+
-	  		   	" |  Name:"+ user1.name +"    | "+" Age:" +user1.age+"     |  "+"Major:"+user1.major +" |\n "+
-	  			"|                    "+"  |  "+"        "+"  |  "+"                   "+"        |\n "+
+	  		   	" |   Name:"+ user1.name +"    | "+" Age:" +user1.age+"     |  "+"Major:"+user1.major +" |\n "+
+			 "\n                       From the Owner:\n "+
+	  			"| "+" Owner Email: "  + own.getEmail() +"         "       +  "   Owner Name: "  +   own.getName()+"     Owner Phone: " +own.getPhone()        +  "\n "
+	  			//"| "+"     Rent : "  + Apartment.get45Rent() +"         "       +  "   Owner Name: "  +   own.getName()+"     Owner Phone: " +own.getPhone()        +  "\n "+
+	  			
+	  		   	
+	  		   	
+	  		   	
 	  		   	"|-----------------------------------------------------------------|\n ");
 	             
-	 db.ShowWhichTenant(user1.id,user1.name);
-	      
-	  			//"|  Owner name:" +ap.rent     +"|"        + "\n "+
-	  			//"|                    "+"  |  "+"        "+"  |  "+"                   "+"        |\n "	 
-	  			 
-	            
+	 logger.info("This window is only for owner to modify the data please enter {modify}");
+	// Apartment.modify();
 	 
-
-// tenant book after owner show his apartments(book comes from the own
+	 
+	 
+	         //  Apartment.viewDashboard();
+	           //THEN MODIFY
 	
   	 
 }
@@ -489,8 +498,8 @@ public static void main(String[] args)
 	start1();
 
 		
-}//end public static void main(String[] args) 
+}
 
 
 
-}// end main class 
+}
