@@ -9,7 +9,7 @@ public class Database {
 	 List <Furniture> dbfurniture=new ArrayList <Furniture>();
 	 List <Apartment> dbapartment=new ArrayList <Apartment>();
  private static final Logger logger = Logger.getLogger(Database.class.getName());
-
+String newtenant="new tenant";
 public  void login(String email,String password)
 		{ 
     user obj0=new user();
@@ -26,7 +26,7 @@ public  void login(String email,String password)
 
 		if (!dbuser.contains(obj1)) {
 			dbuser.add(obj1);	
-		    logger.info("New tenant !"); 
+		    logger.info(newtenant); 
 	
 		}
 	
@@ -62,7 +62,7 @@ public  void AddTenantStudent(String email,String password,String name,String ty
 		    obj0.type="Student";
 		    dbuser.add(obj0);
 			
-		    logger.info("New tenant !");
+		    logger.info(newtenant);
 		    
 		    
 		    
@@ -116,7 +116,7 @@ public  void AddTenantNotStudent(String email,String password,String name,String
 		    
 		    dbuser.add(obj0);	
 			
-		    logger.info("New tenant !");
+		    logger.info(newtenant);
     }
 		for(int i=0;i<dbuser.size();i++) {
 			 //logger.info(db_user.get(i).type+db_user.get(i).password+db_user.get(i).name+db_user.get(i).major);		
