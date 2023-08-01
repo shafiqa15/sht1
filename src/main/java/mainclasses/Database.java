@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
 public class Database {
-   protected static final  List <user> dbuser=new ArrayList <user> ();
+    public static   List <user> dbuser=new ArrayList <user> ();
 	 List <Furniture> dbfurniture=new ArrayList <Furniture>();
 	 List <Apartment> dbapartment=new ArrayList <Apartment>();
 	 
@@ -197,7 +197,7 @@ public void ViewHousing(Apartment obj1) {
 		 obj2.setFloor(obj1.getFloor());
 		 obj2.setNumberOfApartmentsInFloor(obj1.getNumberOfApartmentsInFloor());
 		 dbapartment.add(obj2);
-		/* logger.info("\n" +db_Apartment.get(i).id +db_Apartment.get(i).rent + db_Apartment.get(i).location+ 
+	 /* logger.info("\n" +db_Apartment.get(i).id +db_Apartment.get(i).rent + db_Apartment.get(i).location+ 
 	 db_Apartment.get(i).water	 +  db_Apartment.get(i).electric+ db_Apartment.get(i).balcony + db_Apartment.get(i).internet+ 
 	 db_Apartment.get(i).balcony+ db_Apartment.get(i).bedrooms +db_Apartment.get(i).picture
 	 + db_Apartment.get(i).date+db_Apartment.get(i).residence_name +db_Apartment.get(i).residence_id+ 
