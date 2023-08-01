@@ -471,14 +471,14 @@ static void TenantDashboard() {
 	 logger.info("\nThis is is for "+	user1.name+" Only :D \n"+
 	  		   	" |   Name:"+ user1.name +"    | "+" Age:" +user1.age+"     |  "+"Major:"+user1.major +" |\n "+
 			 "\n                       From the Owner:\n "+
-	  			"| "+" Owner Email: "  + own.getEmail() +"         "       +  "   Owner Name: "  +   own.getName()+"     Owner Phone: " +own.getPhone()        +  "\n "
+	  			"| "+" Owner Email: "  + own.getEmail() +"         "       +  "   Owner Name: "  +   own.getName()+"     Owner Phone: " +own.getPhone()     );
 	  			//"| "+"     Rent : "  + Apartment.get45Rent() +"         "       +  "   Owner Name: "  +   own.getName()+"     Owner Phone: " +own.getPhone()        +  "\n "+
 	  			
 	  		   	
 	  		   	
 	  		   	
-	  		   	"|-----------------------------------------------------------------|\n ");
-	             
+	  		
+	          //   
 	 logger.info("This window is only for owner to modify the data please enter {modify}");
 	// Apartment.modify();
 	 

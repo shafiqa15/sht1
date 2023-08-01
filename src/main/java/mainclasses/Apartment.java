@@ -21,7 +21,6 @@ public class Apartment {
 	   private String numberOfApartmentsInFloor;       
 	   private String buildingId;
 	   private String name;
-	   private  boolean accept;
 	   private String studentMajor;
 	   private String nameTenant;
        private String ageTenant;
