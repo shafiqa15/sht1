@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
 public class Database {
-   public static final  List <user> dbuser=new ArrayList <user> ();
+   protected static final  List <user> dbuser=new ArrayList <user> ();
 	 List <Furniture> dbfurniture=new ArrayList <Furniture>();
 	 List <Apartment> dbapartment=new ArrayList <Apartment>();
  private static final Logger logger = Logger.getLogger(Database.class.getName());
@@ -41,10 +41,10 @@ public  void login(String email,String password)
 
 
 		}
-public void ShowWhichTenant(String id,String name) {
-	user use=new user();
+public void showWhichTenant(String id) {
+	
 	owner own=new owner();
-	Apartment apart =new Apartment();
+	
 	for(int i=0;i<dbuser.size();i++) {
 		if(dbuser.get(i).id.equals(id)) {
 		
@@ -54,7 +54,7 @@ public void ShowWhichTenant(String id,String name) {
 	}
 }
   
-public  void AddTenantStudent(String email,String password,String name,String type,String major,int age,String id)
+public  void addTenantStudent(String email,String password,String name,String type,String major,int age,String id)
 {
 	user obj0=new user(email, password, name, type, major, age,id);
 	 if (!dbuser.contains(obj0))

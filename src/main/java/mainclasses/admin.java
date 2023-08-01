@@ -86,9 +86,9 @@ public class admin {
 			    
 			    apart1.setElectric("yes");
 			    
-			    apart1.setnameـtenant("jebreel");
+			    apart1.setNameTenant("jebreel");
 			    apart1.setStudentMajor("CAP");
-			    apart1.setage_tenant("21");
+			    apart1.setAgeTenant("21");
 			    
 			    
 				  Apartment apart0=new Apartment();
@@ -104,9 +104,9 @@ public class admin {
 				    
 				    apart0.setElectric("yes");
 				    
-				    apart0.setnameـtenant("Saleh");
+				    apart0.setNameTenant("Saleh");
 				    apart0.setStudentMajor("Art");
-				    apart0.setage_tenant("20");
+				    apart0.setAgeTenant("20");
 				    apart0.setInternet("no");
 				    
 				    main.db_Apartment.add(apart0);
@@ -122,9 +122,9 @@ public class admin {
 			    apart.setWater("yes");
 			    apart.setElectric("yes");
 			    apart.setInternet("yes");
-			    apart.setnameـtenant("khalid");
+			    apart.setNameTenant("khalid");
 			    apart.setStudentMajor("Medecine");
-			    apart.setage_tenant("23");
+			    apart.setAgeTenant("23");
 			    
 			    
 				   main.db_Apartment.add(apart);

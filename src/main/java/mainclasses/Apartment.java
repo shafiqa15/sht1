@@ -30,14 +30,6 @@ public class Apartment {
 
 	   
 	   
-	   public String getage_tenant() {
-			return ageTenant;
-		}
-
-
-		public void setage_tenant(String ageTenant) {
-			this.ageTenant = ageTenant;
-		}
 	   
 	   public String getStudentMajor() {
 			return studentMajor;
@@ -49,14 +41,6 @@ public class Apartment {
 		}
 	   
 	   
-	   public String getnameـtenant() {
-			return nameTenant;
-		}
-
-
-		public void setnameـtenant(String nameTenant) {
-			this.nameTenant = nameTenant ;
-		}
 	public String getId() {
 		return id;
 	}
@@ -345,13 +329,26 @@ public class Apartment {
 	}
 
 
-	       
-  
 
 
-             
-		
-	
+	public String getNameTenant() {
+		return nameTenant;
+	}
+
+
+	public void setNameTenant(String nameTenant) {
+		this.nameTenant = nameTenant;
+	}
+
+
+	public String getAgeTenant() {
+		return ageTenant;
+	}
+
+
+	public void setAgeTenant(String ageTenant) {
+		this.ageTenant = ageTenant;
+	}
 
 
 	public static void modify() {
@@ -364,7 +361,7 @@ public class Apartment {
 		String bathrooms ;
 		String bedrooms ;
 		String balcony ;
-		boolean accept;
+	
 		
 		boolean valid ;
         boolean flag = true ; 
@@ -374,7 +371,6 @@ public class Apartment {
         String currentId;
   	    logger.info("Enter Appartment id :");
   	    currentId = s.nextLine();
-        int count = main.db_Apartment.size();
         
     
         
@@ -393,7 +389,7 @@ public class Apartment {
         			rent = s.nextLine();
         			valid = owner.digitsValidator(rent);
         			while(!valid) {
-        				logger.info("inalid!");
+        				logger.info("invalid !");
         				valid  = owner.digitsValidator(rent);
             			rent = s.nextLine();
         			}
@@ -407,7 +403,7 @@ public class Apartment {
         			p = s.nextLine();
         			valid = owner.urlValidator(p);
         			while(!valid) {
-        				logger.info("inalid!");
+        				logger.info("invalid !");
             			valid = owner.urlValidator(p);
             			p = s.nextLine();
         			}
@@ -417,7 +413,7 @@ public class Apartment {
         		    internet = s.nextLine() ;
         			valid = owner.yesNoValidator(internet);
         			while(!valid) {
-        				logger.info("inalid!");
+        				logger.info("invalid !");
             			valid = owner.yesNoValidator(internet);
             		    internet = s.nextLine() ;
         			}
@@ -427,7 +423,7 @@ public class Apartment {
         		    water = s.nextLine() ;
         			valid = owner.yesNoValidator(water);
         			while(!valid) {
-        				logger.info("inalid!");
+        				logger.info("invalid !");
             			valid = owner.yesNoValidator(water);
             			water = s.nextLine() ;
         			}
@@ -437,7 +433,7 @@ public class Apartment {
         			electricety = s.nextLine() ;
         			valid = owner.yesNoValidator(electricety);
         			while(!valid) {
-        				logger.info("inalid!");
+        				logger.info("invalid !");
             			valid = owner.yesNoValidator(electricety);
             			electricety = s.nextLine() ;
         			}
@@ -458,7 +454,7 @@ public class Apartment {
         			bathrooms = s.nextLine() ;
         			valid = owner.digitsValidator(bathrooms);
         			while(!valid) {
-        				logger.info("inalid!");
+        				logger.info("invalid !");
         				valid  = owner.digitsValidator(bathrooms);
         				bathrooms = s.nextLine();
         			}
@@ -468,7 +464,7 @@ public class Apartment {
         			bedrooms = s.nextLine() ;
         			valid = owner.digitsValidator(bedrooms);
         			while(!valid) {
-        				logger.info("inalid!");
+        				logger.info("invalid !");
         				valid  = owner.digitsValidator(bedrooms);
         				bedrooms = s.nextLine();
         			}

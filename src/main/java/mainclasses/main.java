@@ -110,7 +110,7 @@ public static boolean requestRejected = false ;
              if (num == 1){
                  Apartment.addApartment();
                  //okay well stored in the list!
-                Apartment.viewDashboard();
+              //  Apartment.viewDashboard();
                 // for(int i=0;i<db_Apartment.size();i++) {
                 	// logger.info(db_Apartment.get(i).getRent());
                //  }
@@ -120,7 +120,7 @@ public static boolean requestRejected = false ;
              }
              //Dash board
              else if (num ==2) {
-                 Apartment.viewDashboard();
+               //  Apartment.viewDashboard();
              }
              //modify
              else if (num ==3 ) {  
@@ -171,7 +171,7 @@ public static void ViewForTenant() {
     	
     	
     	
-    		db.AddTenantStudent(email,password,name,type,major,age,id);
+    		db.addTenantStudent(email,password,name,type,major,age,id);
     	
     		
            ViewTenantMenuStudent();
@@ -258,7 +258,7 @@ switch(num) {
 		    {	
 		    	logger.info("Refused,try to request again ");
               Apartment.addApartment();
-              Apartment.viewDashboard();
+            //  Apartment.viewDashboard();
 
 		    	
 		    }
@@ -326,8 +326,8 @@ public static void ViewTenantMenuStudent(){
 	            	   
 	               logger.info("The student/s in your apertment is/are with thier informations :\n"+
 	               "Name of the Apartment  Name of the student  Major of the student   age of the student"+"\n"
-	   +person.getName()+"                  "+ person.getnameـtenant()+"               "+person.getStudentMajor()+
-	   "                          "+person.getage_tenant());	 
+	   +person.getName()+"                  "+ person.getNameTenant()+"               "+person.getStudentMajor()+
+	   "                          "+person.getAgeTenant());	 
 	            	
 	                
 	               }
