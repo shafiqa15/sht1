@@ -345,38 +345,13 @@ public class Apartment {
 	}
 
 
-	public static void viewDashboard() {
-		Scanner s = new Scanner(System.in);
-		int count=0;
-		
-       String currentEnterdBuildingfloors = " ";            
-       logger.info("------------------------------------ Owner Final Dash Board ------------------------------------\n");
-       //display buildings
-       
-       logger.info("Buildings:\n");
-       for(Apartment b  : main.db_Apartment ) {
-    	   logger.info("building "+ b.getBuildingId());              
-       }
-       //get specific building id and check it 
-       logger.info("Enter the id of building to show more details ..");
-       String currentEnterdBuildingId =s.nextLine();
-       //convert the arrayList to array and search for this building id in array 
-       int c = main.db_building.size();
-       Building[] buildingArray= main.db_building.toArray(new Building[main.db_building.size()]);
-       for(int i = 1 ; i<=c ; i++ ) {
-    	  if( currentEnterdBuildingId.equals(buildingArray[i].getBuildingId())) {
-    	    	currentEnterdBuildingfloors = buildingArray[i].getBuildingFloors();            		
-    	  }     
-    	  else {
-    	        logger.info("invalid building id !");
-    	  }
-       }            
+	       
   
 
 
              
 		
-	}
+	
 
 
 	public static void modify() {
