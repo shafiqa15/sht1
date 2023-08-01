@@ -8,6 +8,7 @@ public class Database {
    protected static final  List <user> dbuser=new ArrayList <user> ();
 	 List <Furniture> dbfurniture=new ArrayList <Furniture>();
 	 List <Apartment> dbapartment=new ArrayList <Apartment>();
+	 
  private static final Logger logger = Logger.getLogger(Database.class.getName());
 String newtenant="new tenant";
 public  void login(String email,String password)
@@ -150,62 +151,62 @@ public void addBuilding(Apartment obj) {
 	 }
 }
 
-//public void ViewHousing2(Apartment obj1) {
-//	 for(int i=0;i<dbapartment.size();i++) {
-//		 Apartment obj2=new Apartment();
-//		 obj2.setId(obj1.id);
-//		 obj2.setRent(obj1.rent);
-//		 obj2.setLocation(obj1.location);
-//		 obj2.setWater(obj1.water);
-//		 obj2.setElectric(obj1.electric);
-//		 obj2.setBalcony(obj1.balcony);
-//		 obj2.setInternet(obj1.internet);
-//		 obj2.setBathrooms(obj1.bathrooms);
-//		 obj2.setBedrooms(obj1.bedrooms);
-//		 obj2.setPicture(obj1.picture);
-//		 obj2.setDate(obj1.date);
-//		 //obj2.setResidence_name(obj1.residence_name);
-//		 //obj2.setResidence_id(obj1.residence_id);
-//		 obj2.setFloor(obj1.floor);
-//		// obj2.setNumber_of_apartments(obj1.number_of_apartments);
-//		 dbapartment.add(obj2);
-//		 if(obj1.id.equals(obj2.id)) {
-//			 ViewHousing(obj1);
-//		 }
-//	 }
-//	
-//}
+public void ViewHousing2(Apartment obj1) {
+	 for(int i=0;i<dbapartment.size();i++) {
+		 Apartment obj2=new Apartment();
+		 obj2.setId(obj1.getId());
+		 obj2.setRent(obj1.getRent());
+		 obj2.setLocation(obj1.getLocation());
+		 obj2.setWater(obj1.getWater());
+		 obj2.setElectric(obj1.getElectric());
+		 obj2.setBalcony(obj1.getBalcony());
+		 obj2.setInternet(obj1.getInternet());
+		 obj2.setBathrooms(obj1.getBathrooms());
+		 obj2.setBedrooms(obj1.getBedrooms());
+		 obj2.setPicture(obj1.getPicture());
+		 obj2.setDate(obj1.date);
+		 obj2.setBuildingId(obj1.getBuildingId());
+		 obj2.setFloor(obj1.getFloor());
+		 obj2.setNumberOfApartmentsInFloor(obj1.getNumberOfApartmentsInFloor());
+		 dbapartment.add(obj2);
+		 if(obj1.getId().equals(obj2.getId())) {
+			 ViewHousing(obj1);
+		 }
+	 }
+	
+}
 
 
 
-//
-//public void ViewHousing(Apartment obj1) {
-//	 for(int i=0;i<dbapartment.size();i++) {
-//		 Apartment obj2=new Apartment();
-//		 obj2.setId(obj1.id);
-//		 obj2.setRent(obj1.rent);
-//		 obj2.setLocation(obj1.location);
-//		 obj2.setWater(obj1.water);
-//		 obj2.setElectric(obj1.electric);
-//		 obj2.setBalcony(obj1.balcony);
-//		 obj2.setInternet(obj1.internet);
-//		 obj2.setBathrooms(obj1.bathrooms);
-//		 obj2.setBedrooms(obj1.bedrooms);
-//		 obj2.setPicture(obj1.picture);
-//		 obj2.setDate(obj1.date);
-//		// obj2.setResidence_name(obj1.residence_name);
-//		 //obj2.setResidence_id(obj1.residence_id);
-//		 obj2.setFloor(obj1.floor);
-//		// obj2.setNumber_of_apartments(obj1.number_of_apartments);
-//		 dbapartment.add(obj2);
-//		/*logger.info("\n" +db_Apartment.get(i).id +db_Apartment.get(i).rent + db_Apartment.get(i).location+ 
-//	 db_Apartment.get(i).water	 +  db_Apartment.get(i).electric+ db_Apartment.get(i).balcony + db_Apartment.get(i).internet+ 
-//	 db_Apartment.get(i).balcony+ db_Apartment.get(i).bedrooms +db_Apartment.get(i).picture
-//	 + db_Apartment.get(i).date+db_Apartment.get(i).residence_name +db_Apartment.get(i).residence_id+ 
-//	 db_Apartment.get(i).floor+ db_Apartment.get(i).number_of_apartments);*/
-//		 
-//	 }
-//	 }
+
+public void ViewHousing(Apartment obj1) {
+	 for(int i=0;i<dbapartment.size();i++) {
+		 Apartment obj2=new Apartment();
+		 obj2.setId(obj1.getId());
+		 obj2.setRent(obj1.getRent());
+		 obj2.setLocation(obj1.getLocation());
+		 obj2.setWater(obj1.getWater());
+		 obj2.setElectric(obj1.getElectric());
+		 obj2.setBalcony(obj1.getBalcony());
+		 obj2.setInternet(obj1.getInternet());
+		 obj2.setBathrooms(obj1.getBathrooms());
+		 obj2.setBedrooms(obj1.getBedrooms());
+		 obj2.setPicture(obj1.getPicture());
+		 obj2.setDate(obj1.date);
+		 obj2.setBuildingId(obj1.getBuildingId() );
+		 obj2.setFloor(obj1.getFloor());
+		 obj2.setNumberOfApartmentsInFloor(obj1.getNumberOfApartmentsInFloor());
+		 dbapartment.add(obj2);
+		/* logger.info("\n" +db_Apartment.get(i).id +db_Apartment.get(i).rent + db_Apartment.get(i).location+ 
+	 db_Apartment.get(i).water	 +  db_Apartment.get(i).electric+ db_Apartment.get(i).balcony + db_Apartment.get(i).internet+ 
+	 db_Apartment.get(i).balcony+ db_Apartment.get(i).bedrooms +db_Apartment.get(i).picture
+	 + db_Apartment.get(i).date+db_Apartment.get(i).residence_name +db_Apartment.get(i).residence_id+ 
+	 db_Apartment.get(i).floor+ db_Apartment.get(i).number_of_apartments);*/
+		 
+		 
+	 }
+	 
+}
 	
 
 
