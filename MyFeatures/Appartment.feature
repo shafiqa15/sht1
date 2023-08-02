@@ -1,7 +1,7 @@
 Feature: owner add appartment
  
 Scenario: valid apartment inforamtion 
-    Given the owner is logged in to the system
+    Given the owner is logged in to the system with email and password
     And the owner has a choice list with two choices (add new appartment and dashboard)
     When the owner selects 'add new appartment' 
     And  the owner enter valid information
@@ -12,21 +12,17 @@ Scenario: invalid photo format
 	  And add a photo with an invalid format
     Then the system should display an error message
  
-Scenario: owner enters inalid yes/no input 
-    Given the owner is logged in to the system
-    And enter invalid input instead of yes or no
-   
+
 
 Scenario: invalid Onlydigits input  
-    Given the owner is logged in to the system
-    And enter invalid numeric input
+ 
+    Given the owner enter invalid numeric input
     Then the system should display an error message 
     And the system should read a new input
 
 Scenario: view dashboard
-    Given the owner is logged in to the system
-    When the owner selects 'Dashboard'
+
+    Given the owner selects 'Dashboard'
     And  the dashboard will be printed 
-  
   
  

@@ -25,6 +25,8 @@ public class user {
 	  
 		 user u1;
          static List <user> userarray=new  ArrayList <user> ();
+         static List <owner> ownerarray=new  ArrayList <owner> ();
+
 		 boolean log=false;
 		 static Database db=new Database();
 			
@@ -73,6 +75,13 @@ public class user {
 	       userarray.add(this); // back plz !	
 			
 		}
+		
+		public static void signup(owner user) {
+		      
+			ownerarray.add(user);	
+				
+			}
+		
 //String email,String password,String name,String type,String major)
 		public user( String email, String password, String name, String type, String major, int age,String id) {
 			super();

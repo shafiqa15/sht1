@@ -47,7 +47,7 @@ public static boolean loginAdmin = false ;
 public static boolean requestPrinted = false ;
 public static boolean requestAccepted = false ;
 public static boolean requestRejected = false ;
-  static void start1() {
+  public static void start1() {
 	  logger.info(" \n"+"                                    HELLO\n"+
 	  		      "                            WELCOME TO SAKANCOM \n"+
                   "                    Please choose your type: \n" +
@@ -465,7 +465,7 @@ static void ViewTenantMenuNotStudent(){
     TenantDashboard();
 }
 
-static void TenantDashboard() {
+public static void TenantDashboard() {
 	
 
 	 logger.info("\nThis is is for "+	user1.name+" Only :D \n"+
