@@ -21,7 +21,7 @@ Feature: Tenant advertises used furniture
 
   @tag1
 Scenario: Tenant advertises used furniture for sale
-  Given the tenant is on their control panel
+  Given the tenant is logged in the system
   When the tenant clicks on "Sell Furniture"
   Then the tenant can advertise their used furniture for sale
    

@@ -20,8 +20,8 @@
 Feature: Tenant books accommodation
 
   @tag1
- Scenario: Tenant books accommodation
-  Given the tenant has selected the desired housing
-  When the tenant clicks on "Book Now"
-  Then a confirmation message is displayed for successful booking
+ Scenario: Tenant books  accommodation
+  Given the tenant has selected  the desired housing
+  When the tenant clicks on  "Book Now"
+  Then a confirmation message is displayed for successful  booking
  
