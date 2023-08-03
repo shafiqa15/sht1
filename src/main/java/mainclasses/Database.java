@@ -16,7 +16,7 @@ public  void login(String email,String password)
     user obj0=new user();
     dbuser.add(obj0);
  	obj0.email="haya@gmail.com";
-	obj0.password="haya123";
+	obj0.password="*******";
 	dbuser.add(obj0);	
 	
 	  user obj1=new user();
