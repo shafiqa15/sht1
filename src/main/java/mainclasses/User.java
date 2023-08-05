@@ -3,41 +3,31 @@ package mainclasses;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
-public class user {
-	private static final Logger logger = Logger.getLogger(user.class.getName());
+public class User {
+	private static final Logger logger = Logger.getLogger(User.class.getName());
 
        String address;
-	   public String email;
+	   String email;
 	   String name;
 	   String id;
-	   public  String password;
+	   String password;
 	   String phone;
 	   float point=0;
 	   int age;
-	 
-	
 	   String major;
-	   public String type; // student or not .
-	   
-	   
-	   
-	   public String book;
-	  
-		 user u1;
-         static List <user> userarray=new  ArrayList <user> ();
-         static List <owner> ownerarray=new  ArrayList <owner> ();
-
+	   private String type; 
+	   private String book;	  
+		 User u1;
+         static List <User> userArray=new  ArrayList <User> ();
 		 boolean log=false;
-		 static Database db=new Database();
-			
-	// tenant =user	 
-		 public user()
+		 static Database db=new Database();			
+		 public User()
 		 {
-			 this.initialuser();
+			 this.initialUser();
 			
 		 }
-		 	
-		public  void initialuser() {
+		 
+		public  void initialUser() {
 			this.address="nablus";
 			this.email="sht@gmail.com";
 			this.id="1";
@@ -45,14 +35,15 @@ public class user {
 			this.phone="056998521";
 			this.name="shafiqaTala";
 			this.major="Computer Engineering";
-			this.type="student";
+			this.setType("student");
 			
 		
-			userarray.add(this);
+			userArray.add(this);
 			
 				}
-	
-		public static int checkuser(String string1, String string2) {
+		
+		
+		public static int checkUser(String string1, String string2) {
 			if((string1.equals("haya@gmail.com") && string2.equals("haya123")) )
 					{			  logger.info("\n u logged in sucessfully as tenant"); 
 					db.login(string1,string2);
@@ -60,6 +51,7 @@ public class user {
 						
 					}
 			else {
+				
 				
 				db.login(string1,string2);
 		    	
@@ -72,18 +64,10 @@ public class user {
 		public void signup(String str1,String str2) {
 	       u1.email=str1;
 	       u1.password=str2;
-	       userarray.add(this); // back plz !	
+	       userArray.add(this); 
 			
 		}
-		
-		public static void signup(owner user) {
-		      
-			ownerarray.add(user);	
-				
-			}
-		
-//String email,String password,String name,String type,String major)
-		public user( String email, String password, String name, String type, String major, int age,String id) {
+		public User( String email, String password, String name, String type, String major, int age,String id) {
 			super();
 
 			this.email = email;
@@ -91,7 +75,7 @@ public class user {
 			this.password = password;
 			this.age = age;
 			this.major = major;
-			this.type = type;
+			this.setType(type);
 			this.id=id;
 	
 		}
@@ -174,6 +158,14 @@ public class user {
 
 		public void setBook(String book) {
 			this.book = book;
+		}
+
+		public String getType() {
+			return type;
+		}
+
+		public void setType(String type) {
+			this.type = type;
 		}
 
 		

@@ -1,5 +1,6 @@
 package mainclasses;
-public class Building {
+public class Building {	
+	
        private String buildingId ;
       private String buildingName;
       private  String buildingFloors;
@@ -14,8 +15,9 @@ public class Building {
 	}
 	public void setBuildingId(String buildingId) {
 		this.buildingId = buildingId;
-	}      
+	}   
 	public String getBuildingFloors() {
 		return buildingFloors;
 	}
+
 }

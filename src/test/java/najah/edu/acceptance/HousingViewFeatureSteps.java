@@ -11,17 +11,17 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import mainclasses.Apartment;
 import mainclasses.Building;
-import mainclasses.admin;
+import mainclasses.Admin;
 import mainclasses.Database;
-import mainclasses.owner;
-import mainclasses.user;
+import mainclasses.Owner;
+import mainclasses.User;
 
 public class HousingViewFeatureSteps {
-	   admin admin1;
-       owner owner;
+	   Admin Admin1;
+       Owner owner;
        Apartment apart;
 		  
-	   static user user;
+	   static User user;
 		
 	  static boolean flag_housing;
 	  static Database db=new Database();
@@ -29,8 +29,8 @@ public class HousingViewFeatureSteps {
 	   Building build;
 	   static List <Apartment> db_Apartment=new ArrayList <Apartment>(); 
 
-	public HousingViewFeatureSteps(admin adm1,user user2,owner own1,Apartment apart,Building build) {
-		admin1=adm1;
+	public HousingViewFeatureSteps(Admin adm1,user user2,owner own1,Apartment apart,Building build) {
+		Admin1=adm1;
 		user=user2;
 		owner=own1;
 		this.apart=apart;
@@ -54,7 +54,7 @@ public class HousingViewFeatureSteps {
 	@Then("the tenant can see the list of available housing options")
 	public void theTenantCanSeeTheListOfAvailableHousingOptions() {
 
-	       db.ViewHousing(apart1);
+	       db.viewHousing(apart1);
 	       assertFalse(flag_housing);
 	}
 
@@ -63,7 +63,7 @@ public class HousingViewFeatureSteps {
 	@When("the tenant selects a specific housing listing")
 	public void theTenantSelectsASpecificHousingListing() {
 	
-       db.ViewHousing2(apart1);
+       db.viewHousing2(apart1);
       
       	assertFalse(flag_housing);
 	}

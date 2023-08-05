@@ -1,28 +1,32 @@
-//package najah.edu.acceptance;
-//import static org.junit.Assert.assertTrue;
-//import static org.junit.Assert.assertFalse;
-//
-//import java.net.MalformedURLException;
-//import java.net.URISyntaxException;
-//import java.net.URL;
-//import java.util.Scanner;
-//import java.util.logging.Logger;
-//
-//import org.junit.Assert;
-//
-//import io.cucumber.java.en.And;
-//import io.cucumber.java.en.Given;
-//import io.cucumber.java.en.Then;
-//import io.cucumber.java.en.When;
-//import mainclasses.Apartment;
-//import mainclasses.Building;
-//import mainclasses.Database;
-//import mainclasses.main;
-//import mainclasses.owner;
-//
-//public class OwnerSteps {
-//	
-//	static boolean flag;
+package najah.edu.acceptance;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertFalse;
+
+import java.net.MalformedURLException;
+import java.net.URISyntaxException;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+import java.util.logging.Logger;
+
+import org.junit.Assert;
+
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+import mainclasses.Apartment;
+import mainclasses.Building;
+import mainclasses.Database;
+import mainclasses.main;
+import mainclasses.owner;
+import mainclasses.user;
+
+public class OwnerSteps {
+	static List <owner> dbowner   = new ArrayList <owner> ();
+
+	static boolean flag;
 //    private static String storedOwnerEmail , storedOwnerPassword;
 //	 private static final Logger logger = Logger.getLogger(Database.class.getName());
 //
@@ -134,4 +138,22 @@
 //
 //
 //
-//}
+owner own=new owner();
+
+	@Given("the owner signed up")
+	public void theOwnerSignedUp() {
+		 user.signup(own);
+	}
+	
+
+
+
+
+	@Then("the system store this owner")
+	public void theSystemStoreThisOwner() {
+		dbowner.add(own);
+	}
+
+
+
+}

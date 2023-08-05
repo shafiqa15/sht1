@@ -1,22 +1,38 @@
-/*package najah.edu.acceptance;
+package najah.edu.acceptance;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import mainclasses.Building;
+import mainclasses.main;
 public class TenantbooksaccommodationSteps {
-	// Implementing the step definitions using Cucumber and Java
-	@Given("the tenant has selected the desired housing")
-	public void selectDesiredHousing() {
-	    // Code to select the desired housing option for booking
+
+boolean flag;
+	@Given("the tenant has selected  the desired housing")
+	public void theTenantHasSelectedTheDesiredHousing() {
+	     Building bu = new Building();
+         bu.getBuildingId();
+	}
+	@When("the tenant clicks on  {string}")
+	public void theTenantClicksOn(String string) {
+		if(string.equals("book")) {
+			main.TenantDashboard();
+			assertTrue(flag);
+		}
+		else {
+			assertFalse(flag);
+		}
+
+	}
+	@Then("a confirmation message is displayed for successful  booking")
+	public void aConfirmationMessageIsDisplayedForSuccessfulBooking() {
+		assertFalse(flag);
+
 	}
 
-	@When("the tenant clicks on {string}")
-	public void clickBookNow(String button) {
-	    // Code to click the "Book Now" button for the selected housing option
-	}
 
-	@Then("a confirmation message is displayed for successful booking")
-	public void verifyBookingConfirmationDisplayed() {
-	    // Code to verify that a confirmation message for successful booking is displayed
-	}
 
-}*/
+
+}

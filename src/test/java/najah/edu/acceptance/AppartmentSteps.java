@@ -11,29 +11,29 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import mainclasses.Apartment;
 import mainclasses.Building;
-import mainclasses.admin;
-import mainclasses.main;
-import mainclasses.owner;
-import mainclasses.user;
+import mainclasses.Admin;
+import mainclasses.Main;
+import mainclasses.Owner;
+import mainclasses.User;
 public class AppartmentSteps {
     static boolean b = false;
     static boolean flag;
     
    
 
-	owner own=new owner();
-    @Given("the owner is logged in to the system with email and password")
+	Owner own=new Owner();
+    @Given("the Owner is logged in to the system with email and password")
     public void theOwnerIsLoggedInToTheSystemWithEmailAndPassword() {
     
-owner.checkowner(own.email,own.password);
+Owner.checkOwner(own.email,own.password);
     }
 
 
 
 
-    @Given("the owner is logged in to the System")
+    @Given("the Owner is logged in to the System")
     public void theOwnerIsLoggedInToTheSystem() {
-       user.signup(own);
+       User.signup(own);
        
  	 
 
@@ -42,7 +42,7 @@ owner.checkowner(own.email,own.password);
 
     @Then("the system should read a new input")
     public void theSystemShouldReadANewInput() {
-       // Assert.assertTrue(main.addNewApartmentChoice); 
+       // Assert.assertTrue(Main.addNewApartmentChoice); 
 
     }
 
@@ -52,10 +52,10 @@ owner.checkowner(own.email,own.password);
 
 
 
-    @Given("the owner enter invalid numeric input")
+    @Given("the Owner enter invalid numeric input")
     public void theOwnerEnterInvalidNumericInput() {
         // Write code here that turns the phrase above into concrete actions
-        //Assert.assertTrue(main.addNewApartmentChoice); 
+        //Assert.assertTrue(Main.addNewApartmentChoice); 
     }
 
 
@@ -63,24 +63,24 @@ owner.checkowner(own.email,own.password);
 
     @Given("the dashboard will be printed")
     public void theDashboardWillBePrinted() {
-    	main.TenantDashboard();
+    	Main.TenantDashboard();
     }
 
 
 
 
   
-    @Given("the owner has a choice list with two choices \\(add new appartment and dashboard)")
+    @Given("the Owner has a choice list with two choices \\(add new appartment and dashboard)")
     public void theOwnerHasAChoiceListWithTwoChoicesAddNewAppartmentAndDashboard() {
         
     }
-    @When("the owner selects {string}")
+    @When("the Owner selects {string}")
     public void theOwnerSelects(String string) {
       if(string.equals("add")) {
     	  Apartment.addApartment();
       }
       else
-    	  main.TenantDashboard();
+    	  Main.TenantDashboard();
     }
     @When("the system store this appartment")
     public void theSystemStoreThisAppartment() {
@@ -92,9 +92,9 @@ owner.checkowner(own.email,own.password);
 
 
 
-    @When("the owner selects add new apartment")
+    @When("the Owner selects add new apartment")
     public static void theOwnerSelectsAddNewApartment() {
-        Assert.assertTrue(main.addNewApartmentChoice); 
+        Assert.assertTrue(Main.addNewApartmentChoice); 
     }
  
     @And("add a photo with an invalid format")
@@ -104,17 +104,17 @@ owner.checkowner(own.email,own.password);
 
     @And("enter invalid numeric input")
     public static void enterInvalidNumericInput(String s) {
-        Assert.assertFalse(owner.digitsValidator(s));
+        Assert.assertFalse(Owner.digitsValidator(s));
     }
          
     @And("enter invalid yesNo input")
     public static void enterInvalidYesNoInput(String s) {
-        Assert.assertFalse(owner.yesNoValidator(s));
+        Assert.assertFalse(Owner.yesNoValidator(s));
     }       
     
-    @And("the owner enter valid information")
+    @And("the Owner enter valid information")
     public static void theOwnerEnterValidInformation() {
-        Assert.assertTrue(main.validInformation = true );
+        Assert.assertTrue(Main.validInformation = true );
     }    
     
 
@@ -126,14 +126,14 @@ owner.checkowner(own.email,own.password);
 
 
 
-    @When("the owner selects Dashboard")
+    @When("the Owner selects Dashboard")
     public static void theOwnerSelectsDashboard() {
-        Assert.assertTrue(main.dashboardChoice= true );
+        Assert.assertTrue(Main.dashboardChoice= true );
     }
 
-   @When("the owner selects modify")
+   @When("the Owner selects modify")
     public static void theOwnerSelectsModify() {
-       Assert.assertTrue(main.modifyChoice= true );
+       Assert.assertTrue(Main.modifyChoice= true );
     }   
 
 

@@ -6,32 +6,31 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
-public class owner {
-	   public String email;
-       public  String password;     
-	 public  String address;
-	   public String name;
-	    String id;	   
-	  public String phone;
-	
-	   owner o;
-       static List <owner> ownerarray=new  ArrayList <owner> ();
+public class Owner {
+	   private String email;
+       private  String password;     
+       private String address;
+       private  String name;
+	   private String id;	   
+	   private String phone;
+	   Owner o;
+       static List <Owner> ownerArray=new  ArrayList <Owner> ();
        boolean log=false;
-       public owner() {
+       public Owner() {
     	   this.initialuser();
        }
-
+      
    	public  void initialuser() {
    		this.address="nablus";
 		this.email="Ragheb@gmail.com";
 		this.setId("3");
-		this.password="123";
+		this.setPassword("123");
 		this.phone="056998527";
 		this.setName("Ragheb");
 	
-		ownerarray.add(this);
+		ownerArray.add(this);
    	}
-   	public static int checkowner(String string1, String string2) {
+   	public static int checkOwner(String string1, String string2) {
 		if((string1.equals("ragheb@gmail.com") && string2.equals("ragheb123")) )
 				{
 					return 1 ;
@@ -41,13 +40,11 @@ public class owner {
 	}
    	public static boolean idAndPhoneValidator(String idAndPhone)
    	{
-   		if(!digitsValidator(idAndPhone)) {
-   			return false ;
-   		}
-   		if(idAndPhone.length() !=10) {
-   			return false ;
-   		}  
-   		return true ;
+   		boolean b = true ; 
+   		if(!digitsValidator(idAndPhone) || idAndPhone.length() !=10) 
+   			return !b ;
+   		
+   		return b ;
    	}
 
    	public static boolean urlValidator(String url)
@@ -65,12 +62,12 @@ public class owner {
    	}
 
    	public static boolean yesNoValidator(String str){
-   	
-		if( str.equals("yes") || str.equals("no")) {
-   			return true ;
-   		}
+   	     boolean b = true ;
+		if( str.equals("yes") || str.equals("no")) 
+   			return b ;
+   		
    		else 
-   			return false ;
+   			return !b ;
    	}
 
    	public static boolean digitsValidator(String str) { 
@@ -117,17 +114,20 @@ public class owner {
 		return phone;
 	}
 
-	public void setPhone(String phone_number) {
-		this.phone = phone_number;
-	}
-
-	public static void signUp(String email2, String password2) {
-		// TODO Auto-generated method stub
-		
+	public void setPhone(String phoneNumber) {
+		this.phone = phoneNumber;
 	}
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
    	

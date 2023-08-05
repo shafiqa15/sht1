@@ -1,32 +1,29 @@
 package mainclasses;
-
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
 public class Database {
-    public static   List <user> dbuser=new ArrayList <user> ();
+   protected static final  List <User> dbUser=new ArrayList <User> ();
 	 List <Furniture> dbfurniture=new ArrayList <Furniture>();
 	 List <Apartment> dbapartment=new ArrayList <Apartment>();
-	 
  private static final Logger logger = Logger.getLogger(Database.class.getName());
 String newtenant="new tenant";
 public  void login(String email,String password)
 		{ 
-    user obj0=new user();
-    dbuser.add(obj0);
+    User obj0=new User();
+    dbUser.add(obj0);
  	obj0.email="haya@gmail.com";
-	obj0.password="*******";
-	dbuser.add(obj0);	
+	obj0.password="haya123";
+	dbUser.add(obj0);	
 	
-	  user obj1=new user();
+	  User obj1=new User();
 
          	obj1.email=email;
 			obj1.password=password;
 			
 
-		if (!dbuser.contains(obj1)) {
-			dbuser.add(obj1);	
+		if (!dbUser.contains(obj1)) {
+			dbUser.add(obj1);	
 		    logger.info(newtenant); 
 	
 		}
@@ -44,12 +41,12 @@ public  void login(String email,String password)
 		}
 public void showWhichTenant(String id) {
 	
-	owner own=new owner();
+	Owner own=new Owner();
 	
-	for(int i=0;i<dbuser.size();i++) {
-		if(dbuser.get(i).id.equals(id)) {
+	for(int i=0;i<dbUser.size();i++) {
+		if(dbUser.get(i).id.equals(id)) {
 		
-			 logger.info( own.id  +             own.name     +"\n ");
+			 logger.info( own.getId()  +             own.getName()     +"\n ");
 			
 		}
 	}
@@ -57,11 +54,11 @@ public void showWhichTenant(String id) {
   
 public  void addTenantStudent(String email,String password,String name,String type,String major,int age,String id)
 {
-	user obj0=new user(email, password, name, type, major, age,id);
-	 if (!dbuser.contains(obj0))
+	User obj0=new User(email, password, name, type, major, age,id);
+	 if (!dbUser.contains(obj0))
 	 {
-		    obj0.type="Student";
-		    dbuser.add(obj0);
+		    obj0.setType("Student");
+		    dbUser.add(obj0);
 			
 		    logger.info(newtenant);
 		    
@@ -69,31 +66,29 @@ public  void addTenantStudent(String email,String password,String name,String ty
 		    
 		    
      }
-		for(int i=0;i<dbuser.size();i++) {
-			 //logger.info(db_user.get(i).type+db_user.get(i).password+db_user.get(i).name+db_user.get(i).major);		
-		}
+	
 		
-		 user obj2=new user();
+		 User obj2=new User();
 	     obj2.setAddress("Awarta");
 	     obj2.setEmail("shaf@gmail.com");
 	     obj2.setName("SHAFIQA");
 	     obj2.setId("4");
 	     obj2.setAge(20);
 	     obj2.setMajor("CE");
-	     obj2.type="student";
+	     obj2.setType("student");
 
-	     dbuser.add(obj2);
+	     dbUser.add(obj2);
 	     
-	  user obj3=new user();
+	  User obj3=new User();
 	  obj3.setAddress("Awarta");
 	  obj3.setEmail("AHMAD@GMAIL.COM");
 	  obj3.setName("AHMAD");
 	  obj3.setId("5");
 	  obj3.setAge(24);
 	  obj3.setMajor("MEDICINE");
-	  obj3.type="student";
+	  obj3.setType("student");
 
-	  dbuser.add(obj3);
+	  dbUser.add(obj3);
 	  
 	  
 	  
@@ -105,53 +100,44 @@ public  void addTenantStudent(String email,String password,String name,String ty
 	
 	
 }
-public  void AddTenantNotStudent(String email,String password,String name,String type,String major,int age,String id)
+public  void addTenantNotStudent(String email,String password,String name,String type,String major,int age,String id)
 {
-	user obj0=new user(email, password, name, type, major, age,id);
-	 if (!dbuser.contains(obj0))
+	User obj0=new User(email, password, name, type, major, age,id);
+	 if (!dbUser.contains(obj0))
 	 {
-		    obj0.type="Not Student";
+		    obj0.setType("Not Student");
 		    obj0.major="";
 		    obj0.age=0;
 		    obj0.name="";
 		    
-		    dbuser.add(obj0);	
+		    dbUser.add(obj0);	
 			
 		    logger.info(newtenant);
     }
-		for(int i=0;i<dbuser.size();i++) {
-			 //logger.info(db_user.get(i).type+db_user.get(i).password+db_user.get(i).name+db_user.get(i).major);		
-		}
+
+	 
 }
 
-public void addFurniture(String furniture,String cost_furniture) {
+
+public void addFurniture(String furniture,String costFurniture) {
 	Furniture obj0=new Furniture();
-			obj0.type1=furniture;
-			obj0.cost=cost_furniture;
+			obj0.setType1(furniture);
+			obj0.setCost(costFurniture);
 	 if (!dbfurniture.contains(obj0))
 		 
 	 {
 		 dbfurniture.add(obj0);
-		 
-		 for(int i=0;i<dbfurniture.size();i++) {
-			// logger.info(db_Furniture.get(i).type1+db_Furniture.get(i).cost);
 	 }
-	 }
-	 
-	
 }
-
-
 
 public void addBuilding(Apartment obj) {
  
 	 for(int i=0;i<dbapartment.size();i++) {
 		 dbapartment.add(obj);
-		// logger.info("\n" +db_Apartment.get(i).floor);
 	 }
 }
 
-public void ViewHousing2(Apartment obj1) {
+public void viewHousing2(Apartment obj1) {
 	 for(int i=0;i<dbapartment.size();i++) {
 		 Apartment obj2=new Apartment();
 		 obj2.setId(obj1.getId());
@@ -170,7 +156,7 @@ public void ViewHousing2(Apartment obj1) {
 		 obj2.setNumberOfApartmentsInFloor(obj1.getNumberOfApartmentsInFloor());
 		 dbapartment.add(obj2);
 		 if(obj1.getId().equals(obj2.getId())) {
-			 ViewHousing(obj1);
+			 viewHousing(obj1);
 		 }
 	 }
 	
@@ -179,7 +165,7 @@ public void ViewHousing2(Apartment obj1) {
 
 
 
-public void ViewHousing(Apartment obj1) {
+public void viewHousing(Apartment obj1) {
 	 for(int i=0;i<dbapartment.size();i++) {
 		 Apartment obj2=new Apartment();
 		 obj2.setId(obj1.getId());
@@ -197,11 +183,6 @@ public void ViewHousing(Apartment obj1) {
 		 obj2.setFloor(obj1.getFloor());
 		 obj2.setNumberOfApartmentsInFloor(obj1.getNumberOfApartmentsInFloor());
 		 dbapartment.add(obj2);
-	 /* logger.info("\n" +db_Apartment.get(i).id +db_Apartment.get(i).rent + db_Apartment.get(i).location+ 
-	 db_Apartment.get(i).water	 +  db_Apartment.get(i).electric+ db_Apartment.get(i).balcony + db_Apartment.get(i).internet+ 
-	 db_Apartment.get(i).balcony+ db_Apartment.get(i).bedrooms +db_Apartment.get(i).picture
-	 + db_Apartment.get(i).date+db_Apartment.get(i).residence_name +db_Apartment.get(i).residence_id+ 
-	 db_Apartment.get(i).floor+ db_Apartment.get(i).number_of_apartments);*/
 		 
 		 
 	 }
