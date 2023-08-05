@@ -63,7 +63,7 @@ Owner.checkOwner(own.email,own.password);
 
     @Given("the dashboard will be printed")
     public void theDashboardWillBePrinted() {
-    	Main.TenantDashboard();
+    	Main.tenantDashboard();
     }
 
 
@@ -80,7 +80,7 @@ Owner.checkOwner(own.email,own.password);
     	  Apartment.addApartment();
       }
       else
-    	  Main.TenantDashboard();
+    	  Main.tenantDashboard();
     }
     @When("the system store this appartment")
     public void theSystemStoreThisAppartment() {

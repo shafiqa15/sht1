@@ -32,7 +32,9 @@ public class Main {
     static Apartment ap = new Apartment();
     static String furniture;
     static Furniture furniture1 = new Furniture();
-    static String costFurniture;	
+    static String costFurniture;
+	public static boolean validInformation;
+	public static boolean addNewApartmentChoice;	
 
     
   static void start1() {

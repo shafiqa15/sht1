@@ -14,7 +14,7 @@ public class Owner {
 	   private String id;	   
 	   private String phone;
 	   Owner o;
-       static List <Owner> ownerArray=new  ArrayList <Owner> ();
+       static List <Owner> OwnerArray=new  ArrayList <Owner> ();
        boolean log=false;
        public Owner() {
     	   this.initialuser();
@@ -28,7 +28,7 @@ public class Owner {
 		this.phone="056998527";
 		this.setName("Ragheb");
 	
-		ownerArray.add(this);
+		OwnerArray.add(this);
    	}
    	public static int checkOwner(String string1, String string2) {
 		if((string1.equals("ragheb@gmail.com") && string2.equals("ragheb123")) )

@@ -18,7 +18,7 @@ public class User {
 	   private String type; 
 	   private String book;	  
 		 User u1;
-         static List <User> userArray=new  ArrayList <User> ();
+         static List <User> UserArray=new  ArrayList <User> ();
 		 boolean log=false;
 		 static Database db=new Database();			
 		 public User()
@@ -38,7 +38,7 @@ public class User {
 			this.setType("student");
 			
 		
-			userArray.add(this);
+			UserArray.add(this);
 			
 				}
 		
@@ -64,7 +64,7 @@ public class User {
 		public void signup(String str1,String str2) {
 	       u1.email=str1;
 	       u1.password=str2;
-	       userArray.add(this); 
+	       UserArray.add(this); 
 			
 		}
 		public User( String email, String password, String name, String type, String major, int age,String id) {
