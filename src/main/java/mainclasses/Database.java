@@ -13,7 +13,7 @@ public  void login(String email,String password)
     User obj0=new User();
     dbUser.add(obj0);
  	obj0.email="haya@gmail.com";
-	obj0.password="haya123";
+	obj0.setPassword("haya123");
 	dbUser.add(obj0);	
 	
 	  User obj1=new User();
