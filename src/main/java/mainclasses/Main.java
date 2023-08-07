@@ -34,7 +34,9 @@ public class Main {
     static Furniture furniture1 = new Furniture();
     static String costFurniture;
 	public static boolean validInformation;
-	public static boolean addNewApartmentChoice;	
+	public static boolean addNewApartmentChoice;
+	public static boolean dashboardChoice;
+	public static final boolean modifyChoice = false;
 
     
   static void start1() {
@@ -313,7 +315,7 @@ public static void viewTenantMenuStudent(){
 			    logger.info("choose another department to book ! :) \n");
 
 		    }
-          
+          break;
 
 	    }
 	    String f;
@@ -438,7 +440,7 @@ static void viewTenantMenuNotStudent(){
     tenantDashboard();
 }
 
-static void tenantDashboard() {
+public static void tenantDashboard() {
 	
 
 	 logger.info("\nThis is is for "+	user1.name+" Only :D \n"+
@@ -446,7 +448,7 @@ static void tenantDashboard() {
 			 "\n                       From the Owner:\n "+
 	  			"| "+" Owner Email: "  + own.getEmail() +"         "       +  "   Owner Name: "  +   own.getName()+"     Owner Phone: " +own.getPhone()     );
 	  			
-	  		   	
+	  		  
 	  		   	
 	  		   	
 	  		
